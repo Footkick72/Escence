@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Menu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://DrawingEditor.gd" type="Script" id=2]
+
+[node name="DrawingEditor" type="Node"]
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" parent="." instance=ExtResource( 1 )]
+[connection signal="back_button" from="Menu" to="." method="_on_Menu_back_button"]
+[connection signal="home_button" from="Menu" to="." method="_on_Menu_home_button"]
+[connection signal="save_curve_changes" from="Menu" to="." method="_on_Menu_save_curve_changes"]
